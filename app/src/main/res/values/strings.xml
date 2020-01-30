@@ -9,5 +9,11 @@
     <string name="Bewoelkt">Bewölkt</string>
     <string name="namehint">Name eingeben</string>
     <string name="continueButton">Foto aufnehmen unter fortfahren</string>
-
+    <string name="changecolor">Textfarbe ändern</string>
+    <string name="black">Schwarz</string>
+    <string name="white">Weiß</string>
+    <string name="red">Rot</string>
+    <string name="blue">Blau</string>
+    <string name="green">Grün</string>
+    <string name="speichernButton">Grußkarte speichern</string>
 </resources>
