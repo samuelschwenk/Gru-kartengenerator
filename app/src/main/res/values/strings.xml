@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Grußkartengenerator</string>
+    <string name="infoText">Toller Grußkartenenerator</string>
+    <string name="wetter">Wetter auswählen :</string>
+    <string name="Ort_eintragen">Ort eintragen</string>
+    <string name="sun">Sonne</string>
+    <string name="rain">Regen</string>
+    <string name="snow">Schnee</string>
+    <string name="Bewoelkt">Bewölkt</string>
+    <string name="namehint">Name eingeben</string>
+    <string name="continueButton">Foto aufnehmen unter fortfahren</string>
+
+</resources>
