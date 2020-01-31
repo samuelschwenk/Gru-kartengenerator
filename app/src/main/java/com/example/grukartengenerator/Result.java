@@ -87,9 +87,12 @@ public class Result extends AppCompatActivity {
         Canvas canvas = new Canvas(mutableBitmap);
         Paint paint = new Paint();
         paint.setColor(Color);
-        paint.setTextSize(50);
-        canvas.drawText("Viele Grüße aus dem "+Wetter+" "+Ort, 10,200,paint);
-        canvas.drawText("Viele Grüße, "+Name, 10,280,paint);
+        paint.setTextSize(45);
+        Paint painttwo = new Paint();
+        painttwo.setColor(Color);
+        painttwo.setTextSize(75);
+        canvas.drawText("Viele Grüße aus dem "+Wetter+" "+Ort, 30,200,paint);
+        canvas.drawText("Viele Grüße, "+Name, 30,280,painttwo);
         imageView.setImageBitmap(mutableBitmap);
     }
     @RequiresApi(api = Build.VERSION_CODES.M)

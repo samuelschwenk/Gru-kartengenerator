@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaScannerConnection;
@@ -21,6 +22,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.io.File;
 
@@ -53,13 +57,22 @@ public class MainActivity extends AppCompatActivity {
         }
             continueButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
-                    if(getWeatherstring(sonnig,regnerisch,frostig,bewoelkte,maingroup)!= null) {
-                    StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
-                    StrictMode.setVmPolicy(builder.build());
-                    Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(imageFile));
-                    startActivityForResult(takePictureIntent, 1);
-                    }
+                        if(name.getText().toString().trim().length() > 0 && ort.getText().toString().trim().length() > 0 && getWeatherstring(sonnig,regnerisch,frostig,bewoelkte,maingroup)!= "") {
+                                StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+                                StrictMode.setVmPolicy(builder.build());
+                                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(imageFile));
+                                startActivityForResult(takePictureIntent, 1);
+                        }
+                        else{
+                            Context context = getApplicationContext();
+                            CharSequence text = "Sie müssen zuerst alle Felder ausfüllen!";
+                            int duration = Toast.LENGTH_SHORT;
+
+                            Toast toast = Toast.makeText(context, text, duration);
+                            toast.show();
+
+                        }
                 }
             });
 
